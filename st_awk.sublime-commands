@@ -1,0 +1,12 @@
+[
+    {
+        "caption": "Run Awk for this tab", 
+        "command": "st_awk", 
+        "args": {"inplace": "yes"}
+    },
+    {
+        "caption": "Run Awk for thsi tab into new tab", 
+        "command": "st_awk", 
+        "args": {"inplace": "no"}
+    }
+]
