@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import sublime, sublime_plugin
 from subprocess import Popen, PIPE, STDOUT
 
@@ -19,6 +20,9 @@ class st_awkCommand(sublime_plugin.TextCommand):
         except Exception as e:
             sublime.error_message('''Error when run command awk: %s, errno: %d.\nawk is required on $PATH''' 
                 % (e.strerror, e.errno))
+            return
+        except UnicodeEncodeError as e:
+            sublime.error_message('''Error in document encode''')
             return
 
         if inplace:
